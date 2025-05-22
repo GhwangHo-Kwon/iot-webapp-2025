@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML태그학습</title>
+</head>
+<body>
+    <h1>헤딩1</h1>
+    <hr>
+    <h2><a href="#lorem">헤딩2</a></h2>
+    <hr>
+    <h3>헤딩3</h3>
+    <h4>헤딩4</h4>
+    <h5>헤딩5</h5>
+    <h6>헤딩6 : 글자크기 작음</h6>
+    <p>문장영역입니다. 두 번째 문장입니다.<br> HTML에서는 엔터가 표현되지 않습니다.<br>
+        스페이스도 하나이상 표현이 안됩니다.<br>
+        그래서&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;특수문자를 사용합니다.
+        특수문자에는 &와 ; 사이에 문자로 표현합니다.<br>
+        &lt;b&gt; 와 같은 특수문자가 수천개 존재합니다.<br>
+        a태그 target은 _blank(새탭), _self(현재페이지변경), _parent(부모창[탭]이 변경)
+        Oracle&trade; <a href="https://www.microsft.com/" target="_blank" >Microsoft &copy; Ltd.</a>
+    </p>
+    <p>문장영역2입니다.</p>
+    <div>첫번째 영역 : CSS로 화면 디자인할때 영역을 구분할때 사용</div>
+    <div>두번째 영역 : 화면디자인 시 무지막지하게 많이 사용됨</div>
+    <p>세번째 문장영역입니다. 샘플텍스트를 만들어주는 기능이 존재합니다.<br>
+        lorem숫자를 입력하고 탭을 누릅니다. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consequatur, asperiores quidem tenetur nulla laudantium aperiam nihil adipisci consequuntur labore expedita minus corporis ab iusto praesentium aliquam harum eligendi fugit!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda cum officiis inventore odit dignissimos neque minus recusandae, numquam dolorem nemo voluptas fugit id perspiciatis dolores soluta voluptatem odio corporis! Tenetur quis, necessitatibus aperiam similique tempore eaque aliquam perspiciatis est modi quae delectus, quisquam blanditiis temporibus. Autem, aut nihil possimus quae quibusdam sint in, voluptatem tenetur vero provident ad vel non harum dolores sunt quod consectetur recusandae tempora? Possimus, reiciendis dolore atque placeat ad quod consequatur laboriosam accusamus, rem nisi velit quia pariatur obcaecati exercitationem totam. Maiores, reiciendis, iure aperiam modi ducimus porro temporibus libero odit doloribus voluptatem sint impedit quam vitae architecto laudantium explicabo nam eligendi illum quisquam placeat perferendis. Recusandae rem, inventore, molestias harum debitis est accusantium ad dolorem dolor corrupti sint aspernatur. Sunt nisi voluptate nihil consequuntur. Asperiores nostrum molestiae impedit voluptates fuga iure, dolore doloremque tenetur veniam tempore, velit, inventore provident ratione accusamus odio! Recusandae unde voluptas, consectetur quo numquam minima, voluptatem dolorem alias, harum soluta nesciunt doloribus! Aperiam voluptatem debitis esse iste aut dolore expedita nisi ex, quibusdam beatae, error sint dolorem iure ullam. Rerum cum vero quia culpa, eos earum harum commodi soluta assumenda ea at! Voluptatem velit soluta nostrum expedita fugit facilis non quae.</p>    
+    <p id="lorem"><b>Lorem</b> <strong>ipsum</strong> <i>dolor</i> <u>sit</u> <ins>amet</ins> 
+        <small>consectetur</small> E=mc<sup>2</sup><br>
+        log<sub>2</sub>(10)
+        <del>adipisicing elit.</del> Repellat ab nesciunt dolore laborum libero nostrum cupiditate? Dolorem unde sequi provident iste neque ex odio earum eum commodi est quo veritatis voluptatibus non sint necessitatibus odit mollitia blanditiis rerum, fuga molestias impedit temporibus consectetur molestiae. Beatae neque ullam corporis! Doloribus earum incidunt cumque vero itaque vel ut voluptates explicabo ratione, maxime accusamus non laboriosam repudiandae laborum sequi eligendi culpa fugiat. Hic architecto neque tempore magni labore maiores in natus fuga repellat nisi quos, voluptatum nostrum eum vel pariatur quas ex eos iure amet iste. Quos fugiat earum at consequatur, reiciendis quis.</p>
+    <h3>네비게이션 메뉴</h3>
+    <p>메뉴는 대부분 ul(unordered list)로 생성합니다. ordered list도 존재</p>
+    <ul>
+        <li><a href="https://mail.naver.com/" target="_blank">메일</a></li>
+        <li>카페</li>
+        <li>블로그</li>
+        <li>스토어</li>
+        <li>뉴스</li>
+    </ul>
+
+    <ol>
+        <li><a href="https://mail.naver.com/" target="_blank">메일</a></li>
+        <li>카페</li>
+        <li>블로그</li>
+        <li>스토어</li>
+        <li>뉴스</li>
+    </ol>
+    <h3>테이블</h3>
+    <p>Xaml에 Grid와 동일한 기능</p>
+    <table border="1">
+        <tr>
+            <th>1번</th>
+            <th>2번</th>
+            <th>3번</th>
+            <th>4번</th>
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>200</td>
+            <td>300</td>
+            <td rowspan="2">400</td>
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>200</td>
+            <td>300</td>
+            <!-- <td>400</td> -->
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>200</td>
+            <td colspan="2">300</td>
+        </tr>
+    </table>
+    <h3>이미지</h3>
+    <image src="../image/wpf0025.png" width="400" />
+</body>
+</html>
