@@ -110,7 +110,7 @@
 
 - UI기술로 많은 분야에서 사용
     - Qt, PyQt, Electron, Flutter(모바일), React Native(모바일), React.js, ...
-[소스](./day01/html08.html)
+- [소스](./day01/html08.html)
 
 ## 2일차
 
