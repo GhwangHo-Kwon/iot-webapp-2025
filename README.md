@@ -10,13 +10,13 @@
 - 2014년 이후 HTML5로 적용되고 있음
 
 #### 웹 기술
-- 웹 표준기술(프론트엔드) : HTML5(웹 페이지 구조) + CSS 3(디자인) + JavaScript 6(인터렉티브)
-- 웹 `서버`기술(벡엔드) : ASP.NET Core(C#|VB), SpingBoot(Java), Flask|dJangho(Python), CGI(PHP,C), Ruby, ...
+- 웹 표준기술(프론트엔드) : HTML5(웹 페이지 구조) + CSS 3(디자인) + JavaScript (인터렉티브)
+- 웹 `서버`기술(벡엔드) : ASP.NET Core(C#|VB), SpringBoot(Java), Flask|dJango(Python), CGI(PHP,C), Ruby, ...
 - 웹 서비스 : 프론트엔드 + 벡엔드
 - 웹 브라우저 상에서 동작 : 현재는 웹 브라우저 상에서만 동작하는 경계가 사라졌음
 
 #### HTML 5
-- 웹 페이즈를 구성하는 언어(근간, 기본)
+- 웹 페이지를 구성하는 언어(근간, 기본)
 - HTML 상에서도 디자인을 할 수 있으나, 현재는 CSS로 분리
 
 #### CSS 3
@@ -47,7 +47,7 @@
 - 웹을 요청/응답하는 프로토콜
 - HTTPs : HTTP with secure. 보안을 강화한 HTTP 프로토콜
 
-### 웹 표준기술 학습 - HTML
+### 웹 표준기술 - HTML
 
 #### VS Code 확장설치
 - Live Server
