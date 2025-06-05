@@ -925,7 +925,7 @@
 
 4. 이후 작업
     - HomeController Contact() Post 메서드 신규 추가
-    - 메일관련 작업 - Padding
+    - 메일관련 작업 - Pendding
 
 ### ASP.NET Core API서버
 
