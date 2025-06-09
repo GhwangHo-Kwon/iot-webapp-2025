@@ -74,7 +74,8 @@ namespace MyPortfolioWebApp.Controllers
         {
             var board = new Board
             {
-                Writer = ViewBag.Writer,
+                Writer = "",
+                Email = "",
                 PostDate = DateTime.Now,
                 ReadCount = 0,
             };
@@ -87,11 +88,10 @@ namespace MyPortfolioWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Contents")] Board board)
+        public async Task<IActionResult> Create([Bind("Id,Writer,Email,Title,Contents")] Board board)
         {
             if (ModelState.IsValid)
             {
-                board.Writer = ViewBag.Writer;
                 board.PostDate = DateTime.Now;
                 board.ReadCount = 0;
 

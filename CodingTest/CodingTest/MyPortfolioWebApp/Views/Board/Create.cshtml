@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-<section id="news" class="section">
+<section id="board" class="section">
     <div class="container section-title" data-aos="fade-up">
         <h2>자유 게시판</h2>
         <p>자유 게시판입니다</p>
@@ -18,13 +18,24 @@
                 <form asp-controller="Board" asp-action="Create">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-                    <input asp-for="Writer" type="hidden" />
+                    @* <input asp-for="Writer" type="hidden" /> *@
+                    @* <input asp-for="Email" type="hidden" /> *@
                     <input asp-for="PostDate" type="hidden" />
                     <input asp-for="ReadCount" type="hidden" />
                     <div class="form-group mb-2">
                         <label asp-for="Title" class="control-label"></label>
                         <input asp-for="Title" class="form-control" />
                         <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label asp-for="Writer" class="control-label"></label>
+                        <input asp-for="Writer" class="form-control" />
+                        <span asp-validation-for="Writer" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                     <div class="form-group mb-2">
                         <label asp-for="Contents" class="control-label"></label>
@@ -41,5 +52,6 @@
     </div>
 </section>
 
-
-
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
