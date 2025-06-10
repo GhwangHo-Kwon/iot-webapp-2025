@@ -74,8 +74,7 @@ namespace MyPortfolioWebApp.Controllers
         {
             var board = new Board
             {
-                Writer = "",
-                Email = "",
+                Email = User.Identity.Name.ToString(),
                 PostDate = DateTime.Now,
                 ReadCount = 0,
             };
@@ -88,10 +87,18 @@ namespace MyPortfolioWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Writer,Email,Title,Contents")] Board board)
+        public async Task<IActionResult> Create([Bind("Id,Title,Contents")] Board board)
         {
+            // IsValid 오류 나서 강제로 Email 지움
+            if (ModelState.ContainsKey("Email"))
+            {
+                ModelState.Remove("Email");
+            }
+
             if (ModelState.IsValid)
             {
+                board.Email = User.Identity.Name.ToString();
+                board.Writer = User.Identity.Name.ToString();
                 board.PostDate = DateTime.Now;
                 board.ReadCount = 0;
 
@@ -132,6 +139,12 @@ namespace MyPortfolioWebApp.Controllers
                 return NotFound();
             }
 
+            // IsValid 오류 나서 강제로 Email 지움
+            if (ModelState.ContainsKey("Email"))
+            {
+                ModelState.Remove("Email");
+            }
+
             if (ModelState.IsValid)
             {
                 try
@@ -140,6 +153,12 @@ namespace MyPortfolioWebApp.Controllers
                     if (existingBoard == null)
                     {
                         return NotFound();
+                    }
+
+                    if (existingBoard.Writer != User.Identity.Name)
+                    {
+                        TempData["success"] = "게시글 수정 실패!";
+                        return RedirectToAction(nameof(Index));
                     }
 
                     existingBoard.Title = board.Title;
@@ -188,6 +207,13 @@ namespace MyPortfolioWebApp.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var board = await _context.Board.FindAsync(id);
+
+            if (User.Identity.Name != board.Email)
+            {
+                TempData["success"] = "게시글 삭제 실패!";
+                return RedirectToAction(nameof(Index));
+            }
+
             if (board != null)
             {
                 _context.Board.Remove(board);
