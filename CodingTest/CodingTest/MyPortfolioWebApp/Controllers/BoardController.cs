@@ -40,10 +40,10 @@ namespace MyPortfolioWebApp.Controllers
             ViewBag.TotalPage = totalPage;
             ViewBag.Search = search;
 
-            //var board = await _context.Board.FromSql($"CALL New_PagingBoard({startCount}, {endCount}, {search})").ToListAsync();
+            var board = await _context.Board.FromSql($"CALL Board_PagingBoard({startCount}, {endCount}, {search})").ToListAsync();
 
-            return View(await _context.Board.ToListAsync());
-            //return View(board);
+            //return View(await _context.Board.ToListAsync());
+            return View(board);
         }
 
         // GET: Board/Details/5
