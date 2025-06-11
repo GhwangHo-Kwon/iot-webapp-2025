@@ -155,12 +155,6 @@ namespace MyPortfolioWebApp.Controllers
                         return NotFound();
                     }
 
-                    if (existingBoard.Writer != User.Identity.Name)
-                    {
-                        TempData["success"] = "게시글 수정 실패!";
-                        return RedirectToAction(nameof(Index));
-                    }
-
                     existingBoard.Title = board.Title;
                     existingBoard.Contents = board.Contents;
 
@@ -207,12 +201,6 @@ namespace MyPortfolioWebApp.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var board = await _context.Board.FindAsync(id);
-
-            if (User.Identity.Name != board.Email)
-            {
-                TempData["success"] = "게시글 삭제 실패!";
-                return RedirectToAction(nameof(Index));
-            }
 
             if (board != null)
             {

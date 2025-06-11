@@ -52,7 +52,7 @@
             </dl>
         </div>
         <div>
-            @if (SignInManager.IsSignedIn(User))
+            @if (SignInManager.IsSignedIn(User) && (User.Identity.Name == Model.Writer))
             {
                 <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-sm btn-warning">수정</a>
                 <a asp-action="Delete" asp-route-id="@Model?.Id" class="btn btn-sm btn-danger">삭제</a>
